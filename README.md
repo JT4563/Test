@@ -20,7 +20,7 @@ Express + MongoDB backend for a unique frontend interview challenge.
 
 3. **Your backend API base URL for frontend:**
    - **Local development:** `http://localhost:5000`
-   - **If deployed:** `https://your-backend-domain.com`
+   - **If deployed:** `https://test-hr8n.onrender.com`
 
 ### Frontend should make requests to these endpoints:
 
@@ -65,6 +65,29 @@ npm start     # Production mode
 4. **Verify server is running:**
    - Health check: `GET http://localhost:5000/health`
    - Server will run on port 5000 (or your specified PORT)
+
+## 🚀 Deployment on Render
+
+### **Build Command:**
+```bash
+npm install
+```
+
+### **Start Command:**
+```bash
+node server.js
+```
+
+### **Environment Variables to set in Render:**
+- `MONGO_URI` - Your MongoDB Atlas connection string
+- `JWT_SECRET` - A strong secret key for JWT tokens
+- `CORS_ORIGIN` - Your frontend deployment URL (e.g., `https://your-frontend.vercel.app`)
+- `PORT` - Will be automatically provided by Render
+
+### **Important Notes:**
+- Make sure to deploy from the repository root (not from `/src`)
+- The `server.js` file should be in the root directory
+- Render will automatically detect it as a Node.js app
 
 ## Roles
 
