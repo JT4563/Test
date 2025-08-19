@@ -1,4 +1,3 @@
-
 # Interview Portal Backend
 
 Express + MongoDB backend for a unique frontend interview challenge.
@@ -8,11 +7,13 @@ Express + MongoDB backend for a unique frontend interview challenge.
 ### If you have a deployed frontend, update these configurations:
 
 1. **Update CORS_ORIGIN in `.env`:**
+
    ```
    CORS_ORIGIN=https://your-frontend-domain.com
    ```
 
 2. **For multiple frontend URLs (development + production):**
+
    ```
    CORS_ORIGIN=https://your-frontend-domain.com,http://localhost:5173
    ```
@@ -22,12 +23,14 @@ Express + MongoDB backend for a unique frontend interview challenge.
    - **If deployed:** `https://your-backend-domain.com`
 
 ### Frontend should make requests to these endpoints:
+
 - **Base URL:** `http://localhost:5000/api` (or your deployed backend URL)
 - **Health Check:** `GET /health`
 - **Authentication:** `POST /api/auth/login`, `POST /api/auth/register`
 - **Interviews:** `GET /api/interviews`, `POST /api/interviews`, etc.
 
 ## API Endpoints (9 total)
+
 1. `POST /api/auth/register` — Register (candidate/hr/admin)
 2. `POST /api/auth/login` — Login (returns JWT)
 3. `POST /api/interviews` — Create interview (hr/admin)
@@ -41,15 +44,18 @@ Express + MongoDB backend for a unique frontend interview challenge.
 ## Quick Start
 
 1. **Install dependencies:**
+
 ```bash
 npm install
 ```
 
 2. **Environment Setup:**
+
    - Your `.env` file is already configured
    - Update `CORS_ORIGIN` if needed for your frontend domain
 
 3. **Run the server:**
+
 ```bash
 npm run dev   # Development with nodemon
 # or
@@ -61,10 +67,12 @@ npm start     # Production mode
    - Server will run on port 5000 (or your specified PORT)
 
 ## Roles
+
 - `candidate` — book interview, submit answers, view my interviews.
 - `hr` or `admin` — create interview slots, add feedback, view everything.
 
 ## Notes
+
 - JWT required for all non-auth routes via `Authorization: Bearer <token>` header.
 - Basic validations via `express-validator`.
 - CORS allowed via `CORS_ORIGIN` env.
@@ -84,6 +92,7 @@ curl -X POST http://localhost:5000/api/interviews \  -H "Authorization: Bearer T
 ```
 
 ## Folder Structure
+
 ```
 interview-portal-backend/
   server.js
